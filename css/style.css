@@ -1,3 +1,58 @@
+/* ---------- theme variables (place at top of your main CSS file) ---------- */
+
+/* Google font via CSS (если нельзя редактировать <head>) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+  /* LIGHT THEME (defaults) */
+  --bg-primary: #F5F5F5;
+  --bg-card: #FFFFFF;
+  --text-primary: #222222;
+  --muted: #6B7280;
+  --border-color: #E0E0E0;
+  --accent-color: #00CFE3; /* бирюзовый акцент */
+  --accent-variant: rgba(0,207,227,0.12);
+  --shadow: 0 6px 18px rgba(24,28,32,0.06);
+  --grid-line: rgba(0,0,0,0.03);
+}
+
+/* DARK THEME (override variables when data-theme="dark" on <html>) */
+html[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-card: #1E1E1E;
+  --text-primary: #F5F5F5;
+  --muted: #B7B7B7;
+  --border-color: #333333;
+  /* --accent-color остаётся тем же для консистентности */
+  --accent-variant: rgba(0,207,227,0.08);
+  --shadow: 0 10px 30px rgba(0,0,0,0.6);
+  --grid-line: rgba(255,255,255,0.03);
+}
+
+/* Плавные переходы для ключевых свойств */
+*,
+*::before,
+*::after {
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+/* Базовые применения переменных — примеры */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  color: var(--text-primary);
+}
+a, .accent {
+  color: var(--accent-color);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -101,21 +156,9 @@ body {
     align-items: center;
 }
 
-.theme-switcher {
-    display: flex;
-    gap: 8px;
-}
 
-.theme-btn {
-    background: var(--card-bg);
-    border: 1px solid var(--border-light);
-    color: var(--text-gray);
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 13px;
-}
+
+
 
 .theme-btn.active {
     background: var(--gray-accent);
@@ -923,3 +966,209 @@ body {
         padding: 20px;
     }
 }
+
+.theme-toggle span {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+html[data-theme="light"] .icon-sun { opacity: 1; }
+html[data-theme="dark"]  .icon-moon { opacity: 1; }
+/* theme switcher container */
+
+
+/* active theme button highlight */
+.theme-btn.active {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+/* Иконки внутри переключателя */
+.toggle-icon {
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-icon.sun {
+    left: 7px;
+}
+
+.toggle-icon.moon {
+    right: 7px;
+}
+
+/* --- DARK THEME --- */
+html[data-theme="dark"] .toggle-thumb {
+    transform: translateX(26px);
+    background: var(--gray-light);
+}
+
+html[data-theme="dark"] .toggle-icon.moon {
+    opacity: 1;
+}
+
+html[data-theme="dark"] .toggle-icon.sun {
+    opacity: 0.3;
+}
+
+/* --- LIGHT THEME --- */
+html[data-theme="light"] .toggle-icon.sun {
+    opacity: 1;
+}
+
+html[data-theme="light"] .toggle-icon.moon {
+    opacity: 0.3;
+}
+/* -------------------------------
+   Modern Theme Toggle Switch (replace old toggle-related rules)
+--------------------------------- */
+
+
+/* Dark theme: thumb to right, moon visible */
+html[data-theme="dark"] .toggle-thumb {
+    transform: translateX(24px);
+    background: var(--gray-light);
+}
+html[data-theme="dark"] .toggle-icon.moon { opacity: 1; transform: translateY(-50%) scale(1); }
+html[data-theme="dark"] .toggle-icon.sun  { opacity: 0.25; }
+
+/* Light theme: thumb left, sun visible */
+html[data-theme="light"] .toggle-thumb {
+    transform: translateX(0);
+    background: var(--gray-accent);
+}
+html[data-theme="light"] .toggle-icon.sun  { opacity: 1; transform: translateY(-50%) scale(1); }
+html[data-theme="light"] .toggle-icon.moon { opacity: 0.25; }
+
+/* Ensure header layout */
+.header-content 
+
+
+
+/* LIGHT THEME */
+html[data-theme="light"] .toggle-thumb {
+    transform: translateX(0);
+}
+html[data-theme="light"] .toggle-icon.sun {
+    opacity: 1;
+}
+html[data-theme="light"] .toggle-icon.moon {
+    opacity: 0.3;
+}
+
+/* DARK THEME */
+html[data-theme="dark"] .toggle-thumb {
+    transform: translateX(24px);
+}
+html[data-theme="dark"] .toggle-icon.sun {
+    opacity: 0.3;
+}
+html[data-theme="dark"] .toggle-icon.moon {
+    opacity: 1;
+}
+/* ------------------------------
+   NEW THEME TOGGLE (FIXED)
+------------------------------- */
+
+
+/* ============================
+   SIMPLE TWO-CIRCLE TOGGLE
+============================ */
+
+.circle-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.circle-toggle .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border-light);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* черный круг */
+.dark-circle {
+    background: #000;
+    border-color: #000;
+}
+
+/* белый круг */
+.light-circle {
+    background: #fff;
+    border-color: #fff;
+}
+
+/* выделение активной темы */
+.circle.active {
+    transform: scale(1.15);
+}
+
+/* светлая тема = белый круг активный */
+html[data-theme="light"] .dark-circle {
+    opacity: 0.4;
+}
+
+html[data-theme="light"] .light-circle {
+    opacity: 1;
+}
+
+/* тёмная тема = чёрный круг активный */
+html[data-theme="dark"] .light-circle {
+    opacity: 0.4;
+}
+
+html[data-theme="dark"] .dark-circle {
+    opacity: 1;
+}
+
+/* ============================
+   SIMPLE TWO-CIRCLE TOGGLE (FINAL)
+============================ */
+
+.circle-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.circle-toggle .circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* левый кружок — тёмная тема */
+.dark-circle {
+    background: #000;
+}
+
+/* правый кружок — светлая тема */
+.light-circle {
+    background: #fff;
+    border: 2px solid #fff;
+}
+
+/* активный кружок увеличивается */
+.circle.active {
+    transform: scale(1.25);
+}
+
+/* состояние темы */
+html[data-theme="dark"] .dark-circle { opacity: 1; }
+html[data-theme="dark"] .light-circle { opacity: 0.4; }
+
+html[data-theme="light"] .dark-circle { opacity: 0.4; }
+html[data-theme="light"] .light-circle { opacity: 1; }
