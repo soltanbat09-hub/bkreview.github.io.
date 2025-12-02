@@ -1,53 +1,50 @@
-// Theme switching
-document.addEventListener('DOMContentLoaded', function() {
-    const themeButtons = document.querySelectorAll('.theme-btn');
-    const root = document.documentElement;
+// script.js — полностью исправленный файл
 
-    // Theme switching
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const theme = this.getAttribute('data-theme');
-            
-            // Update active button
-            themeButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Update theme
-            root.setAttribute('data-theme', theme);
-            
-            // Save theme to localStorage
-            localStorage.setItem('theme', theme);
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ==========================================
+       TWO-CIRCLE THEME TOGGLE (black/white)
+    ========================================== */
+
+    const circleBtns = document.querySelectorAll('.circle-toggle .circle');
+
+    function activateCircle(theme) {
+        circleBtns.forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.theme === theme);
+        });
+    }
+
+    circleBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const theme = btn.dataset.theme;
+
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+
+            activateCircle(theme);
         });
     });
 
-    // Load saved theme
+    // при загрузке страницы
     const savedTheme = localStorage.getItem('theme') || 'dark';
-    root.setAttribute('data-theme', savedTheme);
-    
-    // Update active theme button
-    themeButtons.forEach(btn => {
-        if (btn.getAttribute('data-theme') === savedTheme) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    activateCircle(savedTheme);
 
-    // Star rating system
+
+
+    /* ==========================================
+       STAR RATING (оставлено без изменений)
+    ========================================== */
     function createStarRating() {
         const starRatings = document.querySelectorAll('.star-rating');
         
         starRatings.forEach(ratingElement => {
-            // Check if stars already generated
-            if (ratingElement.querySelector('.stars')) {
-                return;
-            }
+            if (ratingElement.querySelector('.stars')) return;
             
             const rating = parseFloat(ratingElement.getAttribute('data-rating'));
             const starsContainer = document.createElement('div');
             starsContainer.className = 'stars';
             
-            // Create 5 stars
             for (let i = 1; i <= 5; i++) {
                 const starWrapper = document.createElement('div');
                 starWrapper.className = 'star';
@@ -61,14 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 filledStar.innerHTML = '★';
                 
                 if (i <= Math.floor(rating)) {
-                    // Full star
                     filledStar.style.width = '100%';
                 } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
-                    // Partial star
                     const percentage = (rating - Math.floor(rating)) * 100;
                     filledStar.style.width = percentage + '%';
                 } else {
-                    // Empty star
                     filledStar.style.width = '0%';
                 }
                 
@@ -81,10 +75,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize star ratings
     createStarRating();
 
-    // Animate platform cards on scroll
+
+
+    /* ==========================================
+       PLATFORM CARDS ANIMATION
+    ========================================== */
     const platformCards = document.querySelectorAll('.platform-card');
     if (platformCards.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -104,14 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Update copyright year
+
+
+    /* ==========================================
+       COPYRIGHT YEAR AUTO UPDATE
+    ========================================== */
     const copyrightElements = document.querySelectorAll('.copyright p');
     const currentYear = new Date().getFullYear();
     copyrightElements.forEach(el => {
         el.textContent = el.textContent.replace('2025', currentYear);
     });
 
-    // Add smooth scrolling for anchor links
+
+
+    /* ==========================================
+       SMOOTH SCROLL FOR ANCHORS
+    ========================================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -127,18 +132,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-// Track outbound links
+}); // ← закрывающий DOMContentLoaded
+
+
+
+/* ==========================================
+   OUTBOUND LINK TRACKING
+========================================== */
 document.addEventListener('click', function(e) {
     const link = e.target.closest('a[target="_blank"]');
     if (link) {
-        // Here you can add analytics tracking
         console.log('Outbound link clicked:', link.href);
     }
 });
 
-// Mobile menu toggle (can be added if needed)
+
+/* ==========================================
+   MOBILE MENU TOGGLE
+========================================== */
 function toggleMobileMenu() {
     const menu = document.querySelector('.mobile-menu');
     if (menu) {
