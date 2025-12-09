@@ -18,6 +18,7 @@ body.leon-review-page {
     display: grid;
     grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
     gap: 24px;
+    align-items: flex-start;   /* чтобы sticky работал корректно */
 }
 
 /* мобильный вид: одна колонка */
@@ -31,11 +32,24 @@ body.leon-review-page {
    Сайдбар
    =============================== */
 
-.review-sidebar {
+review-sidebar {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    position: sticky;
+    top: 90px;          /* отступ от верхнего края */
+    align-self: flex-start;
 }
+
+/* на мобилке сайдбар обычный */
+@media (max-width: 900px) {
+    .review-sidebar {
+        position: static;
+        top: auto;
+    }
+}
+
 
 /* карточка Leon — берём базовый стиль из style.css, только отступы */
 .leon-review-page .platform-card.leon-card {
@@ -162,6 +176,12 @@ body.leon-review-page {
     background: var(--card-hover);
     color: var(--text-light);
     transform: translateX(2px);
+}
+.side-nav-link--active {
+    background: var(--accent-variant);
+    color: var(--text-light);
+    font-weight: 600;
+    transform: none;
 }
 
 /* альтернативы */
@@ -781,6 +801,18 @@ body.leon-review-page {
 .alt-link:hover {
     color: #fff;
 }
+/* Левый сайдбар: активный пункт без зелёного блока */
+.sidebar-card.nav-compact .side-nav-link {
+    background: transparent;
+}
+
+/* Активный пункт — только белая подсветка текста/номера, без прямоугольника */
+.sidebar-card.nav-compact .side-nav-link.active,
+.sidebar-card.nav-compact .side-nav-link.active:hover {
+    background: transparent !important; /* убираем зелёный фон */
+    color: #ffffff !important;          /* оставляем белый текст */
+}
+
 /* Светлая тема — делаем заголовок тёмным и читаемым */
 html[data-theme="light"] .review-banner-title {
     color: #111827 !important;  /* насыщенный тёмный, хорошо видно на белом */
@@ -1041,4 +1073,173 @@ html[data-theme="light"] .review-tab.active {
 .bonus-list li a:hover {
     color: #22c55e !important;     /* зелёный при наведении (как на сайте) */
     text-decoration: underline;
+}
+/* Карточка в сайдбаре Лиги Ставок — как на главной */
+.leon-review-page .review-sidebar .platform-card {
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;          /* центрируем внутри колонки */
+    padding: 12px !important;
+    border-radius: 8px !important;
+}
+
+.alt-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 10px;
+}
+
+.alt-logo {
+    width: 55px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.alt-info {
+    flex-grow: 1;
+}
+
+.alt-go-btn {
+    background: #1e7dff;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s;
+}
+
+.alt-go-btn:hover {
+    background: #559bff;
+}
+.review-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    position: sticky;      /* "прилипает" при прокрутке */
+    top: 100px;            /* отступ от верха (подгони по месту) */
+    align-self: flex-start;
+}
+@media (max-width: 900px) {
+    .leon-review-page .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leon-review-page .review-sidebar {
+        position: static;
+        top: auto;
+    }
+}
+/* ===== ВАРИАНТ 2: центрованные «пилюли» ===== */
+.nav-style-2 .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-style-2 .side-nav-link {
+    text-align: center;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    padding: 6px 10px;
+}
+
+.nav-style-2 .side-nav-link:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    color: var(--text-light);
+    transform: translateY(-1px);
+}
+
+/* ===== ВАРИАНТ 4: вертикальная линия-таймлайн слева ===== */
+.nav-style-4 .side-nav {
+    position: relative;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-style-4 .side-nav::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    border-radius: 999px;
+    background: var(--border-light);
+}
+
+.nav-style-4 .side-nav-link {
+    position: relative;
+    padding: 4px 6px;
+}
+
+.nav-style-4 .side-nav-link::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.nav-style-4 .side-nav-link:hover {
+    background: var(--card-hover);
+    color: var(--text-light);
+    transform: translateX(2px);
+}
+
+/* ===== ВАРИАНТ 5: номера в кружках ===== */
+.nav-style-5 .side-nav {
+    counter-reset: navCounter;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-style-5 .side-nav-link {
+    position: relative;
+    padding: 6px 6px 6px 34px;
+}
+
+.nav-style-5 .side-nav-link::before {
+    counter-increment: navCounter;
+    content: counter(navCounter);
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--text-gray);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.nav-style-5 .side-nav-link:hover::before {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.nav-style-5 .side-nav-link:hover {
+    background: var(--card-hover);
+    color: var(--text-light);
+}
+.side-nav-index.active {
+    background: #fff;
+    color: #000;
 }

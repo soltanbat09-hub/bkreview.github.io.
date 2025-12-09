@@ -1716,19 +1716,21 @@ body.light {
 .bonus-highlight strong {
     color: inherit !important;
 }
-
-/* Теперь цвет полностью контролируется bonus-line */
-/* Убираем маркер у бонусной строки */
+/* Убираем маркер у бонусной строки, но отступ как у обычных li */
 .bonus-line {
     list-style: none !important;
-    margin-left: 0 !important; /* убираем лишний отступ */
-    padding-left: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 15px !important;   /* такой же отступ, как у .platform-features li */
+    position: relative;
 }
-/* Галочка для строки бонуса — как у обычных пунктов */
+
+/* Галочка встаёт туда же, где и у других пунктов */
 .bonus-line::before {
     content: "✓";
-    color: var(--accent);   /* тот же цвет, что у остальных галочек */
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    color: var(--accent);
     font-weight: bold;
-    margin-right: 8px;
-    display: inline-block;
+    margin-right: 0;
 }
