@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Честный обзор Winline – мгновенные выплаты и фрибет 3000 ₽</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/review.css">
+</head>
+<body class="leon-review-page">
+
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="../index.html" class="logo-link">
+                <div class="logo">BKREVIEW</div>
+                <div class="logo-subtitle">ЛУЧШИЕ ОБЗОРЫ БУКМЕКЕРОВ.</div>
+            </a>
+            <div class="circle-toggle" id="circleToggle">
+                <button class="circle dark-circle active" data-theme="dark"></button>
+                <button class="circle light-circle" data-theme="light"></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="leon-wrapper">
+    <div class="grid">
+
+        <!-- САЙДБАР -->
+        <aside class="review-sidebar">
+
+            <!-- Карточка Winline -->
+            <article class="platform-card leon-card" style="margin-bottom:20px;">
+                <a href="https://www.winline.ru"
+                   target="_blank"
+                   rel="nofollow noopener"
+                   class="platform-title-logos">
+                    <img src="../img/winline.png" class="platform-logo-img">
+                </a>
+
+                <div class="rating-section">
+                    <div class="star-rating" data-rating="4.35"></div>
+                </div>
+
+                <ul class="platform-features">
+                    <li class="bonus-line">
+                        <a href="https://www.winline.ru"
+                           target="_blank"
+                           rel="nofollow noopener"
+                           class="feature-link">
+                            <strong>Бесплатная ставка 3000 ₽</strong>
+                        </a>
+                    </li>
+                    <li>Мгновенные выплаты</li>
+                    <li>Широкая роспись событий</li>
+                    <li>Высокие коэффициенты</li>
+                </ul>
+
+                <a href="https://www.winline.ru"
+                   target="_blank"
+                   rel="nofollow noopener"
+                   class="platform-bonus">
+                    <div class="bonus-text">Перейти на Winline и получить бонус</div>
+                </a>
+
+                <div class="review-link-container">
+                    <a class="full-review-link winline" style="pointer-events: none; opacity:.5; cursor: default;">
+                        Не переходит на сайт?
+                    </a>
+                </div>
+            </article>
+
+            <!-- Навигация -->
+            <article class="sidebar-card nav-compact">
+                <h3 class="sidebar-title">Навигация по обзору</h3>
+                <nav class="side-nav">
+                    <a href="#about" class="side-nav-link">Что такое Winline</a>
+                    <a href="#bonuses" class="side-nav-link">Бонусы</a>
+                    <a href="#payments" class="side-nav-link">Платежи</a>
+                    <a href="#games" class="side-nav-link">Линия и лайв</a>
+                    <a href="#mobile" class="side-nav-link">Приложение</a>
+                    <a href="#verdict" class="side-nav-link">Итоговый вердикт</a>
+                </nav>
+            </article>
+
+        </aside>
+
+        <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div>
+
+            <section class="review-banner" id="review">
+                <div class="review-banner-text">
+                    <h1 class="review-banner-title">
+                        Честный обзор Winline – быстрые выплаты и фрибет 3000 ₽
+                    </h1>
+                    <p class="review-banner-meta">
+                        Смотрим, за что любят Winline, как работает приветственный бонус и какие есть минусы.
+                    </p>
+                </div>
+
+                <div class="pros-cons">
+                    <div class="pros-list">
+                        <h3>
+                            Плюсы
+                            <span class="pc-icon pc-plus">+</span>
+                        </h3>
+                        <ul>
+                            <li>Фрибет 3000 ₽ для новых игроков.</li>
+                            <li>Очень быстрые выплаты на популярные методы.</li>
+                            <li>Широкая линия и роспись на топ-матчи.</li>
+                            <li>Удобное и стабильное мобильное приложение.</li>
+                            <li>Хорошая репутация и длительное присутствие на рынке.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cons-list">
+                        <h3>
+                            Минусы
+                            <span class="pc-icon pc-minus">−</span>
+                        </h3>
+                        <ul>
+                            <li>Строгая верификация аккаунта.</li>
+                            <li>Нет ставок на политику и TV-шоу.</li>
+                            <li>Не принимает криптовалюты.</li>
+                            <li>Высокие требования к отыгрышу некоторых бонусов.</li>
+                            <li>Не все матчи доступны в live-трансляциях.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="review-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Trust Factor</span>
+                        <div class="star-rating" data-rating="4.5"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Линия и роспись</span>
+                        <div class="star-rating" data-rating="4.4"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Бонусы</span>
+                        <div class="star-rating" data-rating="4.1"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Скорость выплат</span>
+                        <div class="star-rating" data-rating="4.7"></div>
+                    </div>
+                </div>
+
+                <div class="review-metrics-card">
+                    <div class="metric-item">
+                        <span class="metric-label">Удобство приложения</span>
+                        <div class="star-rating" data-rating="4.6"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Поддержка и сервис</span>
+                        <div class="star-rating" data-rating="4.2"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Выбор live-ставок</span>
+                        <div class="star-rating" data-rating="4.4"></div>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Общая оценка Winline</span>
+                        <div class="star-rating" data-rating="4.5"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="card">
+                <h2>Что такое Winline</h2>
+                <p>
+                    Winline — один из самых узнаваемых легальных букмекеров в России с акцентом
+                    на быстрые выплаты и качественный лайв.
+                </p>
+                <p>
+                    Платформа подходит тем, кто ценит стабильность, удобное приложение и честную
+                    работу с выплатами.
+                </p>
+            </section>
+
+            <section id="bonuses" class="card">
+                <h2>Бонусы Winline</h2>
+                <p>
+                    Базовое предложение — фрибет 3000 ₽ для новых клиентов. Конкретные условия
+                    иногда меняются, но в большинстве случаев нужно зарегистрироваться и сделать
+                    первую ставку/депозит.
+                </p>
+                <ul>
+                    <li>Фрибет 3000 ₽.</li>
+                    <li>Периодические акции на экспрессы и топ-турниры.</li>
+                    <li>Розыгрыши призов и промо для постоянных клиентов.</li>
+                </ul>
+            </section>
+
+            <section id="payments" class="card">
+                <h2>Пополнение и вывод в Winline</h2>
+                <p>
+                    Winline славится быстрыми выплатами — при использовании популярных методов
+                    деньги часто приходят за считанные минуты.
+                </p>
+                <ul>
+                    <li>Пополнение банковскими картами, через СБП и кошельки.</li>
+                    <li>Вывод на карты и другие методы без лишних комиссий со стороны букмекера.</li>
+                    <li>Для крупных сумм обязательна полная верификация.</li>
+                </ul>
+            </section>
+
+            <section id="games" class="card">
+                <h2>Линия и лайв-ставки</h2>
+                <p>
+                    Линия Winline покрывает популярные виды спорта и ряд альтернативных рынков.
+                    Особое внимание уделено футболу, хоккею и баскетболу.
+                </p>
+                <ul>
+                    <li>Широкая роспись на топ-матчи.</li>
+                    <li>Удобный лайв с быстрым обновлением коэффициентов.</li>
+                    <li>Часть событий сопровождается видеотрансляциями.</li>
+                </ul>
+            </section>
+
+            <section id="mobile" class="card">
+                <h2>Мобильное приложение Winline</h2>
+                <p>
+                    Приложения для iOS и Android — одна из сильных сторон Winline. Интерфейс
+                    простой, купон собирается в пару касаний, а лайв работает стабильно.
+                </p>
+                <ul>
+                    <li>Быстрый вход и удобная навигация.</li>
+                    <li>Пуш-уведомления о расчёте ставок и новых акциях.</li>
+                    <li>Встроенные трансляции отдельных матчей.</li>
+                </ul>
+            </section>
+
+            <section id="verdict" class="card">
+                <h2>Итоговый вердикт по Winline</h2>
+                <p>
+                    Winline — хороший выбор для тех, кто ценит быстрые выплаты, понятный интерфейс
+                    и легальный статус букмекера.
+                </p>
+                <p>
+                    Строгая верификация и отсутствие криптовалют могут смутить часть игроков,
+                    но если тебе важнее надёжность и скорость, Winline закрывает эти вопросы на отлично.
+                </p>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
